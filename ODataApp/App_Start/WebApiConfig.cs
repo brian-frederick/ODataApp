@@ -12,25 +12,11 @@ namespace ODataApp
     {
         public static void Register(HttpConfiguration config)
         {
-            config.MapHttpAttributeRoutes();
+            var builder = new ODataConventionModelBuilder();
 
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Campaign>("Campaigns");
-            builder.EntitySet<GeoSystem>("GeoSystems");
-            config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: null,
-                model: builder.GetEdmModel());
-            // Web API configuration and services
 
-            // Web API routes
+            config.MapODataServiceRoute("ODataRoute", null, builder.GetEdmModel());
 
 
         }

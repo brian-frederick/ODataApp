@@ -33,6 +33,7 @@ namespace ODataApp.Controllers
             IQueryable<Campaign> result = db.Campaigns.Where(c => c.Id == key);
             return SingleResult.Create(result);
         }
+        [HttpPost]
         public async Task<IHttpActionResult> Post(Campaign campaign)
         {
             if (!ModelState.IsValid)
