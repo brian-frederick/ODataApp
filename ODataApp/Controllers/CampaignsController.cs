@@ -41,7 +41,11 @@ namespace ODataApp.Controllers
                 return BadRequest(ModelState);
             }
             db.Campaigns.Add(campaign);
+            
             await db.SaveChangesAsync();
+
+            var createdCampaign = Created(campaign);
+ 
             return Created(campaign);
 
         }

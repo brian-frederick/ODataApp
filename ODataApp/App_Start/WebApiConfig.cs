@@ -16,10 +16,13 @@ namespace ODataApp
 
             config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
+            builder.EntitySet<GeoSystem>("GeoSystems");
+
             builder.EntitySet<Campaign>("Campaigns");
 
             config.MapODataServiceRoute("ODataRoute", null, builder.GetEdmModel());
 
+            
 
         }
     }

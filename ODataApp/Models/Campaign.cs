@@ -12,6 +12,6 @@ namespace ODataApp.Models
         public string Geotype { get; set; }
         public string District { get; set; }
 
-        //public GeoSystem[] Systems {get; set;}
+        public ICollection<GeoSystem> Systems {get; set;}
     }
 }

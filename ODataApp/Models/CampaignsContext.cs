@@ -11,5 +11,7 @@ namespace ODataApp.Models
         }
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<GeoSystem> GeoSystems { get; set; }
+
+
     }
 }

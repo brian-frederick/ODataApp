@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using System.Data.Entity;
+using ODataApp.Models;
 
 namespace ODataApp
 {
@@ -11,7 +13,9 @@ namespace ODataApp
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<CampaignsContext>(new DropCreateDatabaseIfModelChanges<CampaignsContext>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
         }
     }
 }
