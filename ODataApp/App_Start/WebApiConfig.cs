@@ -14,7 +14,7 @@ namespace ODataApp
         {
             var builder = new ODataConventionModelBuilder();
 
-            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); 
 
             builder.EntitySet<GeoSystem>("GeoSystems");
 
